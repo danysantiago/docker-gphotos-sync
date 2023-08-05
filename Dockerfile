@@ -13,10 +13,10 @@ RUN wget http://www.sentex.net/~mwandel/jhead/jhead-$JHEAD_VERSION.tar.gz \
     && make install
 
 ENV GO111MODULE=on
-RUN go install github.com/perkeep/gphotos-cdp@e9d1979707191993f1c879ae93f8dd810697fd6e
+RUN go install github.com/danysantiago/gphotos-cdp@4a4fd891ee8458ef86e2aa71144e20f5bab26e46
 
 
-FROM crazymax/alpine-s6:3.17-edge
+FROM crazymax/alpine-s6:3.18-edge
 LABEL maintainer="Jake Wharton <docker@jakewharton.com>"
 
 ENV \

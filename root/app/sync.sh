@@ -8,7 +8,7 @@ fi
 
 set -e
 
-gphotos-cdp -v -dev -headless -dldir /download -run /app/fix_time.sh
+gphotos-cdp -v -dev -headless -dldir /download
 
 echo "INFO: Completed sync.sh PID $$ $(date)"
 
