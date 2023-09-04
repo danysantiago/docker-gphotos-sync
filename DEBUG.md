@@ -2,7 +2,7 @@ Some more instructions regarding building and using the image on DSM (Synology)
 
 Since I am on Windows there is some requirements:
 * Docker Desktop for Windows Installed
-* WSL2 (Windows Subsystem for Linu) installed
+* WSL2 (Windows Subsystem for Linux) installed
 * Docker WSL2 integration enabled.
 
 ### Build

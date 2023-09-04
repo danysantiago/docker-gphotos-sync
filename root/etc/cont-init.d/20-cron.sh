@@ -19,13 +19,16 @@ if [ -z "$HEALTHCHECK_ID" ]; then
 NOTE: Define HEALTHCHECK_ID with https://healthchecks.io to monitor sync job"
 fi
 
+USER=$(whoami)
+
 # Set up the cron schedule.
 echo "
 Initializing cron
 
-$CRON
+CRON=$CRON
+USER=$USER
 "
 crontab -d # Delete any existing crontab.
-echo "$CRON /usr/bin/flock -n /app/sync.lock /app/sync.sh" > /tmp/crontab.tmp
+echo "$CRON su $USER -c '/usr/bin/flock -n /app/sync.lock /app/sync.sh'" > /tmp/crontab.tmp
 crontab /tmp/crontab.tmp
 rm /tmp/crontab.tmp
